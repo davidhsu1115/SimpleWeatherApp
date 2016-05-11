@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="00u-vZ-mxX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="00u-vZ-mxX">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -148,6 +148,15 @@
                                 <exclude reference="lta-Cp-B2c"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dg5-bP-Oh6"/>
+                                <exclude reference="3Ku-GZ-peH"/>
+                                <exclude reference="MP9-kk-xFW"/>
+                                <exclude reference="Qtb-M9-1FJ"/>
+                                <exclude reference="wjP-4v-THu"/>
+                                <exclude reference="D7T-Mb-sSd"/>
+                                <exclude reference="f0l-v9-2os"/>
+                                <exclude reference="hU7-XI-aMH"/>
+                                <exclude reference="i8w-wL-be8"/>
                                 <exclude reference="1oZ-w9-dsK"/>
                                 <exclude reference="ARW-jr-DlH"/>
                                 <exclude reference="KJW-iw-T3r"/>
@@ -157,22 +166,13 @@
                                 <exclude reference="tP0-n8-PK7"/>
                                 <exclude reference="1WC-d0-Cko"/>
                                 <exclude reference="tWG-7q-ds6"/>
-                                <exclude reference="D7T-Mb-sSd"/>
-                                <exclude reference="f0l-v9-2os"/>
-                                <exclude reference="hU7-XI-aMH"/>
-                                <exclude reference="i8w-wL-be8"/>
+                                <exclude reference="Atb-44-nhk"/>
                                 <exclude reference="H6H-F6-RpF"/>
                                 <exclude reference="Rtr-P2-E4l"/>
                                 <exclude reference="e8J-Bk-234"/>
                                 <exclude reference="iPw-3M-ALW"/>
-                                <exclude reference="Atb-44-nhk"/>
-                                <exclude reference="3Ku-GZ-peH"/>
-                                <exclude reference="MP9-kk-xFW"/>
-                                <exclude reference="Qtb-M9-1FJ"/>
-                                <exclude reference="wjP-4v-THu"/>
                                 <exclude reference="IWB-ia-tbE"/>
                                 <exclude reference="Lbl-5B-KTw"/>
-                                <exclude reference="dg5-bP-Oh6"/>
                                 <exclude reference="pJb-eB-g4M"/>
                             </mask>
                         </variation>
@@ -183,6 +183,15 @@
                                 <include reference="lta-Cp-B2c"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="dg5-bP-Oh6"/>
+                                <include reference="3Ku-GZ-peH"/>
+                                <include reference="MP9-kk-xFW"/>
+                                <include reference="Qtb-M9-1FJ"/>
+                                <include reference="wjP-4v-THu"/>
+                                <include reference="D7T-Mb-sSd"/>
+                                <include reference="f0l-v9-2os"/>
+                                <include reference="hU7-XI-aMH"/>
+                                <include reference="i8w-wL-be8"/>
                                 <include reference="1oZ-w9-dsK"/>
                                 <include reference="ARW-jr-DlH"/>
                                 <include reference="KJW-iw-T3r"/>
@@ -192,22 +201,13 @@
                                 <include reference="tP0-n8-PK7"/>
                                 <include reference="1WC-d0-Cko"/>
                                 <include reference="tWG-7q-ds6"/>
-                                <include reference="D7T-Mb-sSd"/>
-                                <include reference="f0l-v9-2os"/>
-                                <include reference="hU7-XI-aMH"/>
-                                <include reference="i8w-wL-be8"/>
+                                <include reference="Atb-44-nhk"/>
                                 <include reference="H6H-F6-RpF"/>
                                 <include reference="Rtr-P2-E4l"/>
                                 <include reference="e8J-Bk-234"/>
                                 <include reference="iPw-3M-ALW"/>
-                                <include reference="Atb-44-nhk"/>
-                                <include reference="3Ku-GZ-peH"/>
-                                <include reference="MP9-kk-xFW"/>
-                                <include reference="Qtb-M9-1FJ"/>
-                                <include reference="wjP-4v-THu"/>
                                 <include reference="IWB-ia-tbE"/>
                                 <include reference="Lbl-5B-KTw"/>
-                                <include reference="dg5-bP-Oh6"/>
                                 <include reference="pJb-eB-g4M"/>
                             </mask>
                         </variation>
@@ -271,7 +271,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCk-qc-r66">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -299,10 +299,10 @@
                                 <exclude reference="fCk-qc-r66"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="bxn-qU-Pfr"/>
-                                <exclude reference="uZm-RT-fTk"/>
                                 <exclude reference="ARX-ry-wcB"/>
                                 <exclude reference="AWw-wz-MTs"/>
+                                <exclude reference="bxn-qU-Pfr"/>
+                                <exclude reference="uZm-RT-fTk"/>
                                 <exclude reference="l6P-uJ-z1D"/>
                                 <exclude reference="te4-ME-5kw"/>
                             </mask>
@@ -314,10 +314,10 @@
                                 <include reference="fCk-qc-r66"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="bxn-qU-Pfr"/>
-                                <include reference="uZm-RT-fTk"/>
                                 <include reference="ARX-ry-wcB"/>
                                 <include reference="AWw-wz-MTs"/>
+                                <include reference="bxn-qU-Pfr"/>
+                                <include reference="uZm-RT-fTk"/>
                                 <include reference="l6P-uJ-z1D"/>
                                 <include reference="te4-ME-5kw"/>
                             </mask>

@@ -10,7 +10,7 @@ import UIKit
 
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServiceByGeographicalDelegate, WeatherServiceByTypeCityDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServiceByGeographicalDelegate, WeatherServiceByTypeCityDelegate, WeatherUndergroundServiceByTypeCityDelegate, WeatherUndergroundServiceByGeographicalDelegate{
     
     //ViewController 1
     @IBOutlet weak var cityNameLabel: UILabel!
@@ -29,6 +29,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServic
     
     let weatherServiceByGeographical = WeatherServiceByGeographical()
     let weatherServiceByTypeCity = WeatherServiceByTypeCity()
+    let weatherUndergroundServiceByTypeCity = WeatherUndergroundServiceByTypeCity()
+    let weatherUndergroundServiceByGeographical = WeatherUndergoundServiceByGeographical()
     
     let locationManager = CLLocationManager()
     
@@ -40,16 +42,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServic
         
         self.weatherServiceByGeographical.delegate = self
         self.weatherServiceByTypeCity.delegate = self
+        self.weatherUndergroundServiceByTypeCity.delegate = self
+        self.weatherUndergroundServiceByGeographical.delegate = self
+        
         
         //Core Location Manager ask for GPS location
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-        
-        
+       
         
     }
+    
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
@@ -58,6 +64,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServic
         latitudeFromLocation = myCurrentLocation.coordinate.latitude
         longitudeFromLocation = myCurrentLocation.coordinate.longitude
         
+     
     }
     
     
@@ -72,7 +79,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServic
         
         if latitudeFromLocation != nil && longitudeFromLocation != nil{
         
-            self.weatherServiceByGeographical.getWeather(latitudeFromLocation!, longitude: longitudeFromLocation!)
+            self.weatherUndergroundServiceByGeographical.getWeatherFromWeatherUnderground(latitudeFromLocation!, longitude: longitudeFromLocation!)
         
         }else{
                 let alert = UIAlertController(title: "GPS Failed", message: "無法取得目前位置", preferredStyle: .Alert)
@@ -83,11 +90,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServic
         
     }
     
+    
+    
+    
     //Button for set the weather information by Set city
     @IBAction func setWeatherByTypeCityButton(sender: AnyObject) {
         
         if setCityTextField.text != nil{
-            self.weatherServiceByTypeCity.getWeather(setCityTextField.text!)
+            //self.weatherServiceByTypeCity.getWeather(setCityTextField.text!)
+            self.weatherUndergroundServiceByTypeCity.getWeatherFromWeatherUnderground(setCityTextField.text!)
         }else{
             //add alert controller
             let textAlert = UIAlertController(title: "City Missing", message: "Please Enter The City", preferredStyle: .Alert)
@@ -113,7 +124,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServic
         
     }
     
-    // --TODO code the weatherTypeByCity
+    //implement func from Weather Underground service by Geographical
+    func setWeatherByGeographical(weather: WeatherUnderground) {
+        let name = weather.cityName
+        let windsp = (weather.windSpeed * 0.44704)  //convert mph to m/s
+        let temp = Int(weather.temperature)
+        let bodyTemp = Int(weather.temperature - 2*(sqrt(windsp)))
+        
+        showRealTemperatureLabel.text = "\(temp) °C"
+        showBodyTemperatureLabel.text = "\(bodyTemp) °C"
+        cityNameLabel.text = name
+        
+    }
+    
+    
+        // --TODO code the weatherTypeByCity
     func setWeatherByTypeCity(weather: Weather) {
         let intTemp = Int(weather.temp - 273)
         let name = weather.cityName
@@ -132,5 +157,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, WeatherServic
 //        cityNameLabel.text = name
         
     }
+    
+    func setWeatherByTypeCityInWeatherUnderground(weather: WeatherUnderground) {
+        let intTemp = Int(weather.temperature)
+        let name = weather.cityName
+        
+        showTemperatureByTextCityLabel.text = "\(intTemp)"
+    }
+    
+    
+    // --TODO change OpenWeatherMap Api into WeatherUnderground Api and add the precentage of rain.
+    
     
 }

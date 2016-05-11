@@ -25,7 +25,7 @@ class WeatherServiceByTypeCity{
         let cityEscaped = city.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
         
         let path = "http://api.openweathermap.org/data/2.5/weather?q=\(cityEscaped!)&appid=8a49046459d314dde6f920c401203b9c"
-        let url = NSURL(string: path)
+        let url = NSURL(string:path)
         
         //session connect to the internet and exchange data from the server
         let session = NSURLSession.sharedSession()
